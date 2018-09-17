@@ -22,18 +22,19 @@ public class TwoDArrayMAXRowCol {
 		int i,j;
 		int maxr=Integer.MIN_VALUE,indexr=0,indexc=0,maxc=Integer.MIN_VALUE;
 		int sum,sum2;
-      for(i=0;i<input.length;i++)
-      {	   	  
-    	  sum=0;
-        for(j=0;j<input[0].length;j++)
-        {	
-           sum += input[i][j];
-        }
-           if(sum>maxr)
-           {   maxr=sum;
-           indexr=i;         
-        }
-      }
+	      for(i=0;i<input.length;i++)
+	      {	   	  
+	    	  sum=0;
+	        for(j=0;j<input[0].length;j++)
+	        {	
+	           sum += input[i][j];
+	        }
+	        if(sum>maxr)
+	        {  
+	      	   maxr=sum;
+	      	   indexr=i;         
+	        }
+	      }
       for(i=0;i<input[0].length;i++)
       {	   	  
     	  sum=0;
@@ -41,8 +42,9 @@ public class TwoDArrayMAXRowCol {
         {	
            sum += input[j][i];
         }
-           if(sum>maxc)
-           {   maxc=sum;
+        if(sum>maxc)
+        {
+           maxc=sum;
            indexc=i;         
         }
       }
@@ -51,7 +53,8 @@ public class TwoDArrayMAXRowCol {
 		System.out.println("row"+" "+indexr+" "+maxr);	
 	}
 	else
+	{
 		System.out.println("column"+" "+indexc+" "+maxc);
-
+	}
 	}
 }
