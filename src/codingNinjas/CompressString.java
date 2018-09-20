@@ -14,8 +14,8 @@ public class CompressString {
 	      int l=inputString.length();
 		 String s="";
 	while(i<l-1)
-       {	
-         s=s+inputString.charAt(i);
+     {	
+        s=s+inputString.charAt(i);
         j=i+1;
         int x=1;
         while(j<=l-1 && inputString.charAt(j)==inputString.charAt(i))
@@ -27,13 +27,10 @@ public class CompressString {
         {
           s=s+x;
         }
-        if(j==j+1)
-          i++;
-        else
           i=j;
-      }
+     }
 		if(i==l-1)
 			s=s+inputString.charAt(i);
 	      return s;
-}
+	}
 }
