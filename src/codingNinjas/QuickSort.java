@@ -59,36 +59,4 @@ static int getpivotelement(int []input,int s,int e)
             System.out.print(arr[i]+" ");
         System.out.println();
     }
-//	public static void QuickSort2(int[] arr, int start, int end)
-//	{
-//		if(start<end)
-//		{
-//			int pi = partition(arr, start, end);
-//			QuickSort2(arr, start, pi-1);
-//			QuickSort2(arr, pi+1, end);
-//		}		
-//	}
-//	public static int partition(int[] arr, int start, int end)
-//	{
-//		int pivot = arr[end];
-//		int low=start-1;
-//		int j=start;
-//		while(j<end)
-//		{
-//			if(arr[j]<=pivot)
-//			{
-//				low++;
-//				int temp=arr[j];
-//				arr[j]= arr[low];
-//				arr[low]=temp;
-//			}
-//		}
-//	
-//			int temp=arr[low+1];
-//			arr[low+1]=arr[end];
-//			arr[end]=temp;
-//
-//		return low+1;
-//
-//	}
 }
