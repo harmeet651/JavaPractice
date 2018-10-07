@@ -12,7 +12,7 @@ class CircleC
 	}
 	public double area()
 	{
-	    areaC = Math.PI * rad * rad;
+	    areaC = Math.PI*rad*rad;
 	    return areaC;
 	}
 }
