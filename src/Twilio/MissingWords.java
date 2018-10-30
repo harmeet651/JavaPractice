@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public class MissingWords {
 
 	public static void main(String[] args) {
-		String one = "hi I am harmeet singh";
-		String two = "hi I harmeet";
+		String one = "hi I am harmeet the singh";
+		String two = "hi I harmeet da";
 		ArrayList<String> res = funcMW(one, two);
 		for(int i=0;i<res.size();i++)
 		{
