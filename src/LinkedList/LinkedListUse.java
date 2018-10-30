@@ -8,8 +8,10 @@ public class LinkedListUse {
 		Node<Integer> head = takeInput();
 		System.out.println("new list");
 		//head = insert(head, 22, 0);
-		head = delete(head, 2);
+		//head = delete(head, 2);
 		print(head);
+		Node<Integer> mid = midOfLL(head);
+		System.out.println(mid.data+" middle element");
 	}
 	
 	public static Node<Integer> takeInput() 
@@ -84,8 +86,20 @@ public class LinkedListUse {
 			i++;
 		}
 		temp.next = temp.next.next;
-		return head;
-		
+		return head;	
+	}
+	
+	public static Node<Integer> midOfLL(Node<Integer> head)
+	{
+		Node<Integer> slow = head;
+		Node<Integer> fast = head;
+		while(fast.next!= null && fast.next.next != null)
+		{
+			slow = slow.next;
+			fast = fast.next.next;
+		}
+		Node<Integer> mid = slow;
+		return mid;
 	}
 	
 	public static void print(Node<Integer> head)
