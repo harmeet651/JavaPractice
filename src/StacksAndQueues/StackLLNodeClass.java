@@ -1,4 +1,4 @@
-package LinkedList;
+package StacksAndQueues;
 
 public class StackLLNodeClass<T> {
 	

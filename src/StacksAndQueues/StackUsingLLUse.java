@@ -1,9 +1,6 @@
-package LinkedList;
+package StacksAndQueues;
 
 import java.util.Scanner;
-
-import StacksAndQueues.StackEmptyException;
-import StacksAndQueues.StackUsingLinkedList;
 
 public class StackUsingLLUse {
 
