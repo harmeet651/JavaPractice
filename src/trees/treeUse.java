@@ -21,7 +21,7 @@ public class treeUse {
 		treeNode<Integer> maxnode = maxNode(root);	
 		System.out.println(maxnode.data+" is the max node");
 		
-		int k=2;
+		int k=1;
 		int KdepthCount = noOfNodesAtKDepth(root, k);
 		System.out.println(KdepthCount+" nodes at k depth");
 		
@@ -34,6 +34,9 @@ public class treeUse {
 		
 		int leafs = noOfleafs(root);
 		System.out.println(leafs+" leafs");
+		
+		int k1=1;
+		printAtDepthK(root, k1);
 	}
 
 	public static treeNode<Integer> takeInputLevelWise() {
@@ -221,5 +224,21 @@ public class treeUse {
 			count = count + noOfleafs(root.children.get(i));
 		}
 		return count;
+	}
+
+	public static void printAtDepthK(treeNode<Integer> root, int k)
+	{
+		if(k<0)
+		{
+			return;
+		}
+		if(k==0)
+		{
+			System.out.println(root.data +" ");
+		}
+		for(int i=0;i<root.children.size();i++)
+		{
+			printAtDepthK(root.children.get(i),k-1);
+		}
 	}
 }
