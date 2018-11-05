@@ -4,7 +4,7 @@ import java.util.Scanner;
 import StacksAndQueues.*;
 public class treeUse {
 
-	public static void main(String[] args) 
+	public static void main(String[] args) throws QueueEmptyException 
 	{
 		Scanner s = new Scanner(System.in);
 		//treeNode<Integer> root = takeInput(s);
@@ -20,11 +20,7 @@ public class treeUse {
 		
 		treeNode<Integer> maxnode = maxNode(root);	
 		System.out.println(maxnode.data+" is the max node");
-		
-		int k=1;
-		int KdepthCount = noOfNodesAtKDepth(root, k);
-		System.out.println(KdepthCount+" nodes at k depth");
-		
+	    
 		int x =40;
 		int greaterThanX = numNodeGreater(root, x);
 		System.out.println(greaterThanX+" nodes greater than x");
@@ -100,50 +96,56 @@ public class treeUse {
 	
 	public static void printLevelWise(treeNode<Integer> root)
     {
-//      	QueueWithLinkedList<treeNode<Integer>> queue = new QueueWithLinkedList<treeNode<Integer>>();
-//      	if(root==null)
-//        {
-//          return;
-//        }
-//      	
-//      	queue.enqueue(root);
-//      	queue.enqueue(null);
-//      	while(!queue.isEmpty())
-//        {
-//          treeNode<Integer> currNode = queue.dequeue();
-//		try {
-//			currNode = queue.dequeue();
-//		} catch (QueueEmptyException e1) {
-//			// TODO Auto-generated catch block
-//			e1.printStackTrace();
-//		}
-//          
-//          if(currNode==null)
-//          {
-//            treeNode<Integer> currNode1=queue.front();
-//            if(currNode1==null)
-//            {
-//              break;
-//            }
-//            System.out.println();
-//          }
-//          else
-//          {
-//          	System.out.print(currNode.data+" ");
-//          }
-//          if(currNode!=null)
-//          {
-//          	for(int i=0;i<currNode.children.size();i++)
-//          	{
-//             	queue.enqueue(currNode.children.get(i));
-//          	}
-//            
-//          }
-//          if(currNode==null)
-//          {
-//          	queue.enqueue(null);
-//          }
-//        }
+      	QueueWithLinkedList<treeNode<Integer>> queue = new QueueWithLinkedList<treeNode<Integer>>();
+      	if(root==null)
+        {
+          return;
+        }
+      	
+      	queue.enqueue(root);
+      	queue.enqueue(null);
+      	while(!queue.isEmpty())
+        {
+          treeNode<Integer> currNode = null;
+		try {
+			currNode = queue.dequeue();
+		} catch (QueueEmptyException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+          
+          if(currNode==null)
+          {
+            treeNode<Integer> currNode1 = null;
+			try {
+				currNode1 = queue.front();
+			} catch (QueueEmptyException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+            if(currNode1==null)
+            {
+              break;
+            }
+            System.out.println();
+          }
+          else
+          {
+          	System.out.print(currNode.data+" ");
+          }
+          if(currNode!=null)
+          {
+          	for(int i=0;i<currNode.children.size();i++)
+          	{
+             	queue.enqueue(currNode.children.get(i));
+          	}
+            
+          }
+          if(currNode==null)
+          {
+          	queue.enqueue(null);
+          }
+        }
 	}
 	
 	public static int noOfNodes(treeNode<Integer> root)
@@ -168,20 +170,6 @@ public class treeUse {
 			}
 		}
 		return max;
-	}
-	
-	public static int noOfNodesAtKDepth(treeNode<Integer> root, int k)
-	{
-		int count =0;
-		for(int i=0;i<root.children.size();i++)
-		{
-			noOfNodesAtKDepth(root.children.get(i), k-1);
-		}
-		if(k==0)
-		{
-			count++;
-		}
-		return count;
 	}
 	
 	public static int numNodeGreater(treeNode<Integer> root,int x)
