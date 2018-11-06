@@ -1,10 +1,12 @@
 package twitter;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class FindClosest {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+	{
 		ArrayList<Integer> arrList = new ArrayList<>();
 		arrList.add(0);
 		arrList.add(1);
@@ -19,71 +21,77 @@ public class FindClosest {
 		System.out.println();
 	}
 
-private static ArrayList<Integer> findClosestDuplicate(String s, ArrayList<Integer> arrList) {
-		
-		ArrayList<Integer> matches = new ArrayList<>();
-		for(int outer=0;outer<arrList.size();outer++)
+	private static ArrayList<Integer> findClosestDuplicate(String s, ArrayList<Integer> queryList) 
+	{
+			HashMap<Character, ArrayList<Integer>> map = new HashMap<>();
+			for(int i=0;i<s.length();i++)
+			{
+				char curr = s.charAt(i);
+				ArrayList<Integer> occurrences = map.getOrDefault(curr, new ArrayList<Integer>());
+				occurrences.add(i);
+				map.put(curr, occurrences);
+			}			
+			ArrayList<Integer> closestIndices = new ArrayList<>();
+			
+			for(int i=0;i<queryList.size();i++)
+			{
+				int curr = queryList.get(i);
+				char ch = s.charAt(curr);
+				ArrayList<Integer> occurrences = map.get(ch);
+				int listOfIndex = binarySearch(occurrences, curr);
+				int cnIndex = findIndex(occurrences, listOfIndex);
+				closestIndices.add(cnIndex);
+			}
+			return closestIndices;	
+	}
+
+	private static int findIndex(ArrayList<Integer> closestIndices, int current) {
+		if (current < 0 || current > closestIndices.size() - 1 || closestIndices.size() <= 1) 
 		{
-			int flag =0;
-			int flag2=0;
-			int matchUp=Integer.MAX_VALUE;
-			int matchDown=Integer.MIN_VALUE;
-			int current = arrList.get(outer);
-			//System.out.println(current+" this is current");
-			for(int i=current+1;i<s.length();i++)
+			return -1;
+		}
+		if (current == 0)
+		{
+			return closestIndices.get(current + 1);
+		}
+		if (current == closestIndices.size() - 1) 
+		{
+			return closestIndices.get(current - 1);
+		}
+		int closerOne=0;
+		if(closestIndices.get(current) - closestIndices.get(current - 1) <= closestIndices.get(current + 1) - closestIndices.get(current))
+		{
+			closerOne = current -1;
+		}
+		else
+		{
+			closerOne = current +1;
+		}
+		return closestIndices.get(closerOne);
+	}
+
+	private static int binarySearch(ArrayList<Integer> occurrences, int curr) 
+	{
+		int start = 0;
+		int end = occurrences.size() - 1;
+		while (start <= end) 
+		{
+			int mid = start + (end - start) / 2;
+
+			if (occurrences.get(mid) == curr) 
 			{
-				if(s.charAt(i)==s.charAt(current))
-				{
-					matchUp = i;
-					flag =1;
-					//System.out.println(matchUp+" found uppar");
-					break;
-				}
-				else
-				{
-					matchUp = -1;
-				}
-	
-			}
-			for(int i=current-1;i>=0;i--)
+				return mid;
+			} 
+			else if (occurrences.get(mid) < curr) 
 			{
-				if(s.charAt(i)==s.charAt(current))
-				{
-					matchDown = i;
-					flag2 =1;
-					//System.out.println(matchDown+" found neeche");
-					break;
-				}
-				else
-				{
-					matchDown = -1;
-				}
-			}
-			if(flag ==1 && flag2==0)
+				start = mid + 1;
+			} 
+			else 
 			{
-				matches.add(matchUp);
-			}
-			else if(flag2 ==1 && flag==0)
-			{
-				matches.add(matchDown);
-			}
-			if(flag ==1 && flag2 ==1)
-			{
-				if(current -matchDown<=matchUp-current)
-				{
-					matches.add(matchDown);
-				}
-				else
-				{
-					matches.add(matchUp);
-				}
-			}
-			if(matchUp==-1 && matchDown==-1)
-			{
-				matches.add(-1);
+				end = mid - 1;
 			}
 		}
-		return matches;
+		return -1;
 	}
 }
 
