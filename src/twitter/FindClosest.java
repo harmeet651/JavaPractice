@@ -69,7 +69,14 @@ private static ArrayList<Integer> findClosestDuplicate(String s, ArrayList<Integ
 			}
 			if(flag ==1 && flag2 ==1)
 			{
-				matches.add(matchDown);
+				if(current -matchDown<=matchUp-current)
+				{
+					matches.add(matchDown);
+				}
+				else
+				{
+					matches.add(matchUp);
+				}
 			}
 			if(matchUp==-1 && matchDown==-1)
 			{
