@@ -1,6 +1,7 @@
 package HackerRank;
-
-public class aNoOfTimes {
+//count how many times a repeats in string which is reapting for some value n
+// example for string "aba" and n= 10, a comes 7 times, abaabaabaa
+public class aNoOfTimes{
 
 	public static void main(String[] args) {
 		int n=10;
