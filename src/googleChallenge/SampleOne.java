@@ -1,12 +1,13 @@
 package googleChallenge;
 
 import java.util.ArrayList;
-
+//fix number plate according to a given value
+//example 2-4A0r7-4k and value = 4 -> 24A0-R74K, for value equal to 3 -> 24-A0R-74K
 public class SampleOne {
 
 	public static void main(String[] args) {
 		String a = "2-4A0r7-4k";
-		int k=4;
+		int k=3;
 		String ans = func(a, k);
 		System.out.println(ans);
 	}
