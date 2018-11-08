@@ -1,7 +1,6 @@
-package JamCity;
+package jamCity;
 
-public class NoOf1in11PowN {
-
+public class Power11 {
 	public static void main(String[] args) {
 		int n=3;
 		int ans=solution(n);
