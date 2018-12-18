@@ -21,7 +21,7 @@ public abstract class Vehicle {
 		System.out.println("Vehicle speed is : "+maxSpeed);
 	}
 	
-	//abstract method, completed in car, due to this we have made the class vehicle abstract, now cannit make object of vehicle
+	//abstract method, completed in car, due to this we have made the class vehicle abstract, now cannot make object of vehicle
 	public abstract boolean isMotorized();
 
 }

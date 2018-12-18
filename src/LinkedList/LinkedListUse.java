@@ -7,7 +7,7 @@ public class LinkedListUse {
 
 		Node<Integer> head = takeInput();
 		System.out.println("new list");
-		//head = insert(head, 22, 0);
+		head = insert(head, 22, 0);
 		//head = delete(head, 2);
 		print(head);
 		Node<Integer> mid = midOfLL(head);

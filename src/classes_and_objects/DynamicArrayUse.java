@@ -8,7 +8,7 @@ public class DynamicArrayUse {
 		{
 			d.add(i+10);
 		}
-		System.out.println(d.size());
+		System.out.println(d.size()+" size");
 		d.set(4, 10);
 		System.out.println(d.get(3));
 		System.out.println(d.get(4));

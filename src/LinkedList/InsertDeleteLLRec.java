@@ -7,9 +7,14 @@ public class InsertDeleteLLRec {
 		int pos =1;
 		int element = 30;
 		//Node<Integer> newList = InsertRec(head, pos, element);
-		Node<Integer> newList2 = DeleteRec(head, pos);
-		LinkedListUse.print(newList2);
+		//LinkedListUse.print(newList);
+		//Node<Integer> newList2 = DeleteRec(head, pos);
+		int val = 6;
+		Node<Integer >newList = removeElementsLL(head, val);
+		System.out.println("after");
+		LinkedListUse.print(newList);
 	}
+
 	public static Node<Integer> InsertRec(Node<Integer> head, int pos, int element)
 	{
 		if(pos==0)
@@ -37,5 +42,16 @@ public class InsertDeleteLLRec {
 		}
 		head.next = DeleteRec(head.next, pos-1);
 		return head;
+	}
+	private static Node<Integer> removeElementsLL(Node<Integer> head, int val) {
+
+		Node<Integer> dummy = new Node<Integer>(0);
+        dummy.next = head;
+        Node<Integer> pre = dummy;
+        while (pre.next != null) {
+            if (pre.next.data == val) pre.next = pre.next.next;
+            else pre = pre.next;
+        }
+        return dummy.next;
 	}
 }
