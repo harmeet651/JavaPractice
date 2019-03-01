@@ -29,7 +29,7 @@ public class FindMostFreq {
 		{
 			set.add(i);
 		}
-		ArrayList<String> res = new ArrayList<>();
+		
 		for(String i : words) {
 			if(!map.containsKey(i) && !set.contains(i))
 			{
@@ -49,6 +49,7 @@ public class FindMostFreq {
 				}
 			}
 		}
+		ArrayList<String> res = new ArrayList<>();
 		//System.out.println(map);
 		int maxx = maxVal;
 		for(Entry<String, Integer> loop : map.entrySet())

@@ -1,9 +1,5 @@
 package LeetCode;
 
-import javax.print.attribute.HashAttributeSet;
-
-import javafx.util.converter.NumberStringConverter;
-
 public class RangeSumQuery {
 	
 	int nums[];
