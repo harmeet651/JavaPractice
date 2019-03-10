@@ -1,4 +1,4 @@
-package binaryTress;
+package binaryTrees;
 
 import java.util.Scanner;
 
@@ -33,7 +33,7 @@ public class BinaryTreeUse {
         /* first print data of node */
         System.out.print(node.data + " "); 
   
-        /* then recur on left sutree */
+        /* then recur on left subtree */
         printPreorder(node.left); 
   
         /* now recur on right subtree */

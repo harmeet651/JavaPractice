@@ -1,4 +1,4 @@
-package binaryTress;
+package binaryTrees;
 
 public class BinaryTreeNode<T> {
 	public T data;

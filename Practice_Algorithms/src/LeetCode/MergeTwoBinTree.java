@@ -1,7 +1,7 @@
 package LeetCode;
 
-import binaryTress.BinaryTreeNode;
-import binaryTress.BinaryTreeUse;
+import binaryTrees.BinaryTreeNode;
+import binaryTrees.BinaryTreeUse;
 public class MergeTwoBinTree {
 
 	public static void main(String[] args) {
