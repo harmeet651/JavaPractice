@@ -9,8 +9,8 @@ import java.util.Map;
 public class K_Distinct_Substrings {
 
 	public static void main(String[] args) {
-		String ques = "abcd";
-		int k = 2;
+		String ques = "abacdd";
+		int k = 3;
 		List<String> ans = find_K_Distinct_Substrings_Brute(ques, k);
 		System.out.println();
 		System.out.println();
