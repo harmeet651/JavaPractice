@@ -8,6 +8,7 @@ public class SubsOfString {
 		{
 			System.out.println(a);
 		}
+		printSubsq("xyz");
 	}
 
 	private static String[] bringSubsq(String s) {
@@ -30,6 +31,23 @@ public class SubsOfString {
 			k++;
 		}
 		return ans;
+	}
+	public static void printSubsq(String s)
+	{
+		printSubsq(s, "");
+	}
+	
+	private static void printSubsq(String s, String output) {
+		if(s.length()==0)
+		{
+			System.out.println(output);
+			return;
+		}
+		//we don't choose letter
+		printSubsq(s.substring(1), output);
+		//we choose it
+		printSubsq(s.substring(1), output+s.charAt(0));
+		
 	}
 
 }
