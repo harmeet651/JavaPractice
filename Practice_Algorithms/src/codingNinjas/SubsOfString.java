@@ -8,14 +8,16 @@ public class SubsOfString {
 		{
 			System.out.println(a);
 		}
-		
+		System.out.println();
 		printSubsq("xyz");
-		
+		System.out.println();
 		String[] perm = permutationOfString("abc");
 		for(String a : perm)
 		{
 			System.out.println(a);
 		}
+		System.out.println();
+		printPerm("abc");
 	}
 
 	private static String[] bringSubsq(String s) {
@@ -78,5 +80,23 @@ public class SubsOfString {
         }        
         return ans;
     }	
+	
+	public static void printPermutations(String s, String output)
+	{
+		if(s.length()==0)
+		{
+			System.out.println(output);
+			return;
+		}
+		for(int i=0;i<s.length();i++)
+		{
+			printPermutations(s.substring(0,i)+s.substring(i+1), output+s.charAt(i));
+		}
+	}
+	
+	public static void printPerm(String s)
+	{
+		printPermutations(s, "");
+	}
 
 }
