@@ -8,7 +8,14 @@ public class SubsOfString {
 		{
 			System.out.println(a);
 		}
+		
 		printSubsq("xyz");
+		
+		String[] perm = permutationOfString("abc");
+		for(String a : perm)
+		{
+			System.out.println(a);
+		}
 	}
 
 	private static String[] bringSubsq(String s) {
@@ -49,5 +56,27 @@ public class SubsOfString {
 		printSubsq(s.substring(1), output+s.charAt(0));
 		
 	}
+	
+	public static String[] permutationOfString(String input)
+    {
+		if(input.length()==0)
+		    {
+				String ans[]={""};
+				return ans;
+		    }
+			String small[]=permutationOfString(input.substring(1));
+			String ans[]=new String[small.length*input.length()];
+		int k = 0;
+        for(int i=0;i<small.length;i++)
+        {
+            String current = small[i];
+            for(int j=0;j<=current.length();j++)
+            {
+                ans[k] = current.substring(0,j)+input.charAt(0)+current.substring(j);
+                k++;
+            }
+        }        
+        return ans;
+    }	
 
 }
