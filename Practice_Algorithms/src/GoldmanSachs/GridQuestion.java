@@ -11,7 +11,7 @@ public class GridQuestion {
 		temp.add(0);
 		temp.add(1);
 		temp.add(0);
-		temp.add(0);
+		temp.add(1);
 		List<Integer> temp2 = new ArrayList<>();
 		temp2.add(0);
 		temp2.add(0);
@@ -24,9 +24,9 @@ public class GridQuestion {
 		rules.add("dead");
 		rules.add("alive");
 		rules.add("dead");
-		rules.add("dead");
-		rules.add("dead");
 		rules.add("alive");
+		rules.add("dead");
+		rules.add("dead");
 		rules.add("dead");
 		rules.add("dead");
 		rules.add("dead");
