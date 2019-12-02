@@ -5,7 +5,7 @@ package Roblox;
 import java.util.Map; 
 import java.util.TreeMap; 
   
-public class DistStrings  
+public class DistinctPalindromicStrings  
 {      
     // Function to print all distinct palindrome 
     // sub-strings of s 
