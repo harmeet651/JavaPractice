@@ -5,6 +5,40 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+//from collections import defaultdict
+//
+//def favoriteVideoGenre(numUsers, userVideosWatched, numGenres, videoGenres):
+//
+//    #Dictionary with key = movie and value = genre
+//    myDict = {}
+//
+//
+//    outputDict = defaultdict(list)
+//
+//##Iterate over videoGenres to create a reversed dictionary O(N^2)
+//    for genre in videoGenres:
+//        for movie in videoGenres[genre]:
+//            myDict[movie] = genre
+//
+//
+//##
+//    for user in userVideosWatched:
+//        insideDict  = {}
+//        maxVal = 0
+//        for movie in userVideosWatched[user]:
+//            if movie in myDict: ##To check if the movie exists. Just to be safe about what if the given dictionary does not have that movie
+//                if myDict[movie] in insideDict:
+//                    insideDict[myDict[movie]]+=1
+//                    maxVal = max(maxVal, insideDict[myDict[movie]])
+//                else:
+//                    insideDict[myDict[movie]] = 1
+//                    maxVal = max(maxVal, insideDict[myDict[movie]])
+//
+//        c = [k for k,v in insideDict.items() if v == maxVal]
+//
+//        outputDict[user] = c
+//    return outputDict
+
 public class Genres {
 
 	public static void main(String[] args) {
