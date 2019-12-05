@@ -55,6 +55,10 @@ public class Genres {
 		b.add("song5");
 		b.add("song6");
 		b.add("song7");
+//		b.add("song71");
+//		b.add("song72");
+//		b.add("song73");
+//		b.add("song74");
 		userSongs.put("Emma",b);
 		
 		HashMap<String, ArrayList<String>> songGenres = new HashMap<>();
@@ -107,9 +111,12 @@ public class Genres {
 	   		for(String song : songs) 
 	   		{
 	   			String genre = songstogenre.get(song);
-	   			int c = count.getOrDefault(genre, 0) + 1;
-	   			count.put(genre, c);
-	            max = Math.max(c, max);
+	   			if(genre!=null)
+	   			{
+		   			int c = count.getOrDefault(genre, 0) + 1;
+		   			count.put(genre, c);
+		            max = Math.max(c, max);
+	   			}
 	   		}
            for (String key : count.keySet()) 
            {
